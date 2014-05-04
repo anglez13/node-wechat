@@ -1,0 +1,17 @@
+<%- include header %>
+  <form class="form" role="form" method="post">
+    <h3 class="form-heading">登入</h3>
+    <input type="text" class="form-control" placeholder="username" name="name" required autofocus/><br />
+    <input type="password" class="form-control" placeholder="password" name="password" required/><br />
+	<label class="checkbox">
+        <input type="checkbox" value="remember-me"> Remember me
+    </label>
+	<% if (success) { %>
+      <div><%= success %></div>
+    <% } %>
+    <% if (error) { %>
+      <div><%= error %> </div>
+    <% } %>
+    <input type="submit" class="btn btn-info btn-primary btn-block" value="登入"/>
+  </form>
+<%- include footer %>

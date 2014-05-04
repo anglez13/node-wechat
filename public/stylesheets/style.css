@@ -1,0 +1,95 @@
+ body {
+        padding-top: 70px;
+        padding-bottom: 40px;
+		padding-left: 60px;
+      }
+	  .nav li {
+	  padding-top: 5px;
+	  }
+	  
+	  .sidebar-nav {
+        padding: 9px 0;
+      }
+ 
+
+.well {
+background-image: url('/public/img/gridbg.gif');
+  background-repeat:repeat;
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  border-radius: 6px;
+}
+
+.nav .nav-header {
+font-size: 18px;
+color:#FF9900;
+}
+.prepage a{float:right;text-decoration:none;padding:.5em 0em;color:#0099FF;font-weight:bold;}
+.nextpage a{float:right;text-decoration:none;padding:.5em 0em;color:#0099FF;font-weight:bold;}
+.prepage a:hover,.nextpage a:hover{text-decoration:none;color:#006600;-webkit-transition:color .2s linear;}
+
+.l_head{float:left;margin-left:-4em;box-shadow:0px 1px 4px #888;}
+.r_head{float:right;padding-right:0em;margin-top:-2.5em;}
+
+.archive{
+          list-style:none;
+		  line-height:28px;
+		  padding-top:20px;
+		  padding-left:14em;
+		  font-size:22px;
+        }
+.archive h2{margin:0.5em 0;}
+.archive time{float:left;font-size:19px;color:#999999;margin-right:1.5em;}
+
+.table-style{
+          list-style:none;
+		  line-height:28px;
+		  padding-top:20px;
+		  padding-left:10em;
+		  font-size:18px;
+		  }
+		  
+.form {
+  max-width: 205px;
+  padding: 20px;
+  margin: 0 auto;
+}
+
+.form .form-heading,
+.form .checkbox {
+  margin-bottom: 10px;
+}
+.form .checkbox {
+  font-weight: normal;
+}
+.form .form-control {
+  position: relative;
+  font-size: 16px;
+  height: auto;
+  padding: 10px;
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+}
+.form .form-control:focus {
+  z-index: 2;
+}
+
+.taglist{ width:350px;overflow:hidden; text-align:left; margin:0 auto;} 
+#tags a{height:26px; line-height:26px;padding-right:6px;} 
+#tags .tags0{color:#FF3300;font-size:22px;} 
+#tags .tags1{color:#00CC99; font-size:24px;} 
+#tags .tags2{color:#6600FF; font-size:25px;} 
+#tags .tags3{color:#FF0066;font-size:27px;} 
+#tags .tags4{color:#CC0099;font-size:22px;} 
+#tags .tags5{color:#00CC00; font-size:26px;} 
+#tags .tags6{color:#009999;font-size:23px;} 
+#tags .tags7{color:#FFFF00; font-weight:bold; font-size:24px;} 
+#tags .tags8{color:#CC0000; font-weight:bold;font-size:24px;} 
+#tags .tags9{color:#FFCC99; font-weight:bold;font-size:22px;} 
+#tags .tags10{color:#CC66FF; font-weight:bold;font-size:26px;} 
+#tags .tags11{color:#990000;font-size:24px;} 
+#tags .tags12{color:#3333CC;font-size:21px;} 
+#tags a:hover{ color:#006666; text-decoration:underline;font-size:22px;} 
+.w95{ width:95%; margin:0 auto; padding-top:6px; padding-bottom:6px;} 
+.taglist .w95{} 

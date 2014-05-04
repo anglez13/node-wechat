@@ -1,0 +1,60 @@
+<%- include header %>
+<div class="container">
+   <div class="row">
+      <div class="span3">
+	    <% if (user) { %>
+        <div class="well sidebar-nav">
+            <ul class="nav nav-list">
+			  <% if (user.name =="admin") { %>
+			    <li class="nav-header">管理</li>
+                <li><a  href="/msgm">文章管理</a></li>
+                <li><a href="/usersm">用户管理</a></li>
+			  <% } else { %>
+                <li class="nav-header">信息广场</li>
+                <li><a  href="/archive">要闻</a></li>
+                <li><a href="/tags">标签</a></li>
+			    <li><a href="/links">友情链接</a></li>
+			  <% } %>
+				<li class="nav-header">发布信息</li>
+                <li><a href="/post">发表</a></li>
+                <li><a href="/upload">上传</a></li>
+            </ul>
+			<form action="/search" method="GET"><input type="text" name="keyword" placeholder="SEARCH" class="navbar-search" /></form>
+		</div><!--/.well -->
+		<% } %>
+      </div><!--/span-->
+      
+	  <div class="span7">
+      <% posts.forEach(function (post, index) { %>
+        <p><h2><a href="/u/<%= post.name %>/<%= post.time.day %>/<%= post.title %>"><%= post.title %></a></h2>
+        <a href="/u/<%= post.name %>"><img src="<%= post.head %>" class="r_head" /></a></p>
+        <p>
+          作者：<a href="/u/<%= post.name %>"><%= post.name %></a> | 
+          日期：<%= post.time.minute %> | 
+          标签：
+          <% post.tags.forEach(function (tag, index) { %>
+            <% if (tag) { %>
+              <a class="label label-important" href="/tags/<%= tag %>"><%= tag %></a>
+            <% } %>
+          <% }) %>
+          <% if (post.reprint_info.reprint_from) { %>
+            <br><a href="/u/<%= post.reprint_info.reprint_from.name %>/<%= post.reprint_info.reprint_from.day %>/<%= post.reprint_info.reprint_from.title %>">原文链接</a>
+          <% } %>
+        </p>
+      <p><%- post.post %></p>
+      <p>
+        阅读：<%= post.pv %> | 
+        评论：<%= post.comments.length %> | 
+        转载：
+        <% if (post.reprint_info.reprint_to) { %>
+          <%= post.reprint_info.reprint_to.length %>
+        <% } else { %>
+          <%= 0 %>
+        <% } %>
+     </p>
+     <% }) %>
+     <%- include paging %>
+     </div>
+   <div>
+</div>
+<%- include footer %>

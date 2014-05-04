@@ -1,0 +1,16 @@
+<%- include header %>
+<form class="form" role="form" method="post">
+   <h3 class="form-heading">注册</h3>
+   <input type="text" class="form-control" placeholder="username" name="name" required autofocus/><br />
+   <input type="password" class="form-control" placeholder="password" name="password" required/><br />
+   <input type="password" class="form-control" placeholder="password again" name="password-repeat" required/><br />
+   <input type="email" class="form-control" placeholder="email" name="email" required/><br />
+   	<% if (success) { %>
+      <div><%= success %></div>
+    <% } %>
+    <% if (error) { %>
+      <div><%= error %> </div>
+    <% } %>
+   <input type="submit" class="btn btn-info btn-primary btn-block" value="注册"/>
+</form>
+<%- include footer %>

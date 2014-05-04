@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" />
+<title>Blog</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link rel="stylesheet" href="/stylesheets/style.css">
+<link rel="stylesheet" href="/stylesheets/bootstrap.css">
+<link href="/stylesheets/bootstrap-responsive.css" rel="stylesheet"> 
+<script type="text/javascript" src="/javascripts/jquery.js"></script>
+<script type="text/javascript" src="/javascripts/bootstrap.js"></script>
+<script type="text/javascript"> 
+  $(document).ready(function(){ 
+  var tags_a = $("#tags a"); 
+  tags_a.each(function(){ 
+  var x = 9; 
+  var y = 0; 
+  var rand = parseInt(Math.random() * (x - y + 1) + y); 
+  $(this).addClass("tags"+rand); 
+  }); 
+})  
+</script> 
+
+<script charset="utf-8" src="/KindEditor/kindeditor-min.js"></script>
+<script charset="utf-8" src="/KindEditor/lang/zh_CN.js"></script>
+<script>
+var editor;
+KindEditor.ready(function(K) {
+   editor = K.create('textarea', {
+   allowImageUpload : false,
+   items : [
+    'fontname', 'fontsize', '|', 'forecolor', 'hilitecolor', 'bold', 'italic',
+    'underline', 'removeformat', '|', 'justifyleft', 'justifycenter', 'justifyright',
+    'insertorderedlist', 'insertunorderedlist', '|', 'emoticons', 'image', 'link']
+  });			
+});
+</script>
+</head>
+<body>
+<div class="navbar navbar-inverse navbar-fixed-top">
+  <div class="navbar-inner">
+    <div class="container">
+      <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".navbar-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+	  <a class="brand" href="#">Blog</a>
+      <div class="nav-collapse collapse">
+        <ul class="nav">
+          <li><a href="/">首页</a></li>
+		  <% if (!user) { %> 
+            <li><a href="/login">登入</a></li>
+            <li><a href="/reg">注册</a></li>
+		  <% } else { %> 
+		    <li><a>欢迎您,<%= user.name %></a></li>
+			<li><a href="/logout">登出</a></li> 
+		  <% } %> 
+	    </ul>
+      </div><!--/.nav-collapse -->
+    </div>
+  </div>
+</div>
+<article>
