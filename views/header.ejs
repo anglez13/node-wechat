@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8" />
-<title>Blog</title>
+<title>信息发布平台</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <link rel="stylesheet" href="/stylesheets/style.css">
@@ -46,7 +46,7 @@ KindEditor.ready(function(K) {
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-	  <a class="brand" href="#">Blog</a>
+	  <a class="brand" href="#">信息发布平台</a>
       <div class="nav-collapse collapse">
         <ul class="nav">
           <li><a href="/">首页</a></li>
@@ -55,7 +55,28 @@ KindEditor.ready(function(K) {
             <li><a href="/reg">注册</a></li>
 		  <% } else { %> 
 		    <li><a>欢迎您,<%= user.name %></a></li>
-			<li><a href="/logout">登出</a></li> 
+			<li class="dropdown">
+			  <% if (user.name=="admin") { %>
+			    <a href="#" class="dropdown-toggle" data-toggle="dropdown">管理<b class="caret"></b></a>
+                  <ul class="dropdown-menu">
+                    <li><a  href="/msgm">文章管理</a></li>
+                    <li><a href="/usersm">用户管理</a></li>
+				  </ul>
+ 			  <% } else { %>
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">信息广场<b class="caret"></b></a>
+                  <ul class="dropdown-menu">
+                    <li><a  href="/archive">要闻</a></li>
+                    <li><a href="/tags">标签</a></li>
+			        <li><a href="/links">友情链接</a></li>
+				  </ul>
+			  <% } %>
+            <li class="dropdown">
+			  <a href="#" class="dropdown-toggle" data-toggle="dropdown">发布信息<b class="caret"></b></a>
+                <ul class="dropdown-menu">
+				  <li><a href="/post">发表</a></li>
+                  <li><a href="/upload">上传</a></li>
+				</ul>
+			<li><a href="/logout">登出</a></li>
 		  <% } %> 
 	    </ul>
       </div><!--/.nav-collapse -->
