@@ -259,7 +259,7 @@ weixin.clickEventMsg(function(msg) {
 					title : "PHP依赖管理工具Composer入门",
 					description : "PHP依赖管理工具Composer入门",
 					picUrl : "http://weizhifeng.net/images/tech/composer.png",
-					url : "http://angela13.duapp.com/"
+					url : "http://floating-castle-5941.herokuapp.com/"
 				}];
 	    var resMsg = {
 					fromUserName : msg.toUserName,
