@@ -59,23 +59,25 @@ KindEditor.ready(function(K) {
 			  <% if (user.name=="admin") { %>
 			    <a href="#" class="dropdown-toggle" data-toggle="dropdown">管理<b class="caret"></b></a>
                   <ul class="dropdown-menu">
-                    <li><a  href="/msgm">文章管理</a></li>
+                    <li><a href="/msgm">文章管理</a></li>
                     <li><a href="/usersm">用户管理</a></li>
 				  </ul>
  			  <% } else { %>
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">信息广场<b class="caret"></b></a>
                   <ul class="dropdown-menu">
-                    <li><a  href="/archive">要闻</a></li>
+                    <li><a href="/archive">要闻</a></li>
                     <li><a href="/tags">标签</a></li>
 			        <li><a href="/links">友情链接</a></li>
 				  </ul>
 			  <% } %>
+			</li>
             <li class="dropdown">
 			  <a href="#" class="dropdown-toggle" data-toggle="dropdown">发布信息<b class="caret"></b></a>
                 <ul class="dropdown-menu">
 				  <li><a href="/post">发表</a></li>
                   <li><a href="/upload">上传</a></li>
 				</ul>
+			</li>
 			<li><a href="/logout">登出</a></li>
 		  <% } %> 
 	    </ul>
