@@ -12,6 +12,10 @@
     "connect-mongo": "*",
     "connect-flash": "*",
     "markdown": "*",
-	"formidable":"*"
+	"sha1":"*",
+	"events":"*",
+	"xml2js":"*",
+	"querystring":"*",
+	"crypto":"*"
   }
 }
