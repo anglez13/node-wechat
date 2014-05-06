@@ -258,7 +258,7 @@ weixin.clickEventMsg(function(msg) {
 	    var articles = [{
 					title : "信息发布平台",
 					description : "信息发布平台",
-					picUrl : "http://imguxv.penshow.cn/uploadfile/2010/04/06/20100406102259486.jpg",
+					picUrl : "http://weizhifeng.net/images/tech/composer.png",
 					url : "http://floating-castle-5941.herokuapp.com/"
 				}];
 	    var resMsg = {
