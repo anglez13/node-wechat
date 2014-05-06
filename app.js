@@ -253,12 +253,12 @@ weixin.clickEventMsg(function(msg) {
     console.log(JSON.stringify(msg));
 	
 	switch(msg.eventKey){
-	   case '101' : 
+	   case '301' : 
 	   
 	    var articles = [{
-					title : "PHP依赖管理工具Composer入门",
-					description : "PHP依赖管理工具Composer入门",
-					picUrl : "http://weizhifeng.net/images/tech/composer.png",
+					title : "信息发布平台",
+					description : "信息发布平台",
+					picUrl : "http://imguxv.penshow.cn/uploadfile/2010/04/06/20100406102259486.jpg",
 					url : "http://floating-castle-5941.herokuapp.com/"
 				}];
 	    var resMsg = {
