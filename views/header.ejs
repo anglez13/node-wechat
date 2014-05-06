@@ -27,7 +27,8 @@
 <script>
 var editor;
 KindEditor.ready(function(K) {
-   editor = K.create('textarea', {
+   editor = K.create('textarea[name="post"]', {
+   minWidth:300,//设置编辑器的最小宽度
    allowImageUpload : false,
    autoHeightMode : true,
    afterCreate : function() {
@@ -37,7 +38,6 @@ KindEditor.ready(function(K) {
     'fontname', 'fontsize', '|', 'forecolor', 'hilitecolor', 'bold', 'italic',
     'underline', 'removeformat', '|', 'justifyleft', 'justifycenter', 'justifyright',
     'insertorderedlist', 'insertunorderedlist', '|', 'emoticons', 'image', 'link']
-	
   });			
 });
 </script>
