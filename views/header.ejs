@@ -29,10 +29,15 @@ var editor;
 KindEditor.ready(function(K) {
    editor = K.create('textarea', {
    allowImageUpload : false,
+   autoHeightMode : true,
+   afterCreate : function() {
+						this.loadPlugin('autoheight');
+						},
    items : [
     'fontname', 'fontsize', '|', 'forecolor', 'hilitecolor', 'bold', 'italic',
     'underline', 'removeformat', '|', 'justifyleft', 'justifycenter', 'justifyright',
     'insertorderedlist', 'insertunorderedlist', '|', 'emoticons', 'image', 'link']
+	
   });			
 });
 </script>
