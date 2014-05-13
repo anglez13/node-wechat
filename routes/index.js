@@ -428,7 +428,7 @@ module.exports = function(app) {
   app.post('/edit/:name', checkLoginAdmin);
   app.post('/edit/:name', function (req, res) {
     //var currentUser = req.session.user;
-    User.update(req.params.name, req.body.email, function (err) {
+    User.update(req.params.name, req.body.email, req.body.role, function (err) {
       if (err) {
         req.flash('error', err); 
         return res.redirect('back');//出错！返回文章页
@@ -475,7 +475,7 @@ module.exports = function(app) {
 };
 
   function checkLoginAdmin(req, res, next) {
-    if (req.session.user.name != "admin") {
+    if (req.session.user.role != "admin") {
       req.flash('error', '未登录!'); 
       res.redirect('/login');
     }

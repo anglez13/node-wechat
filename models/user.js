@@ -14,13 +14,15 @@ module.exports = User;
 User.prototype.save = function(callback) {
   var md5 = crypto.createHash('md5'),
       email_MD5 = md5.update(this.email.toLowerCase()).digest('hex'),
-      head = "http://www.gravatar.com/avatar/" + email_MD5 + "?s=48";
+      head = "http://www.gravatar.com/avatar/" + email_MD5 + "?s=48",
+	  role = "user";
   //要存入数据库的用户信息文档
   var user = {
       name: this.name,
       password: this.password,
       email: this.email,
-      head: head
+      head: head,
+	  role: role
   };
   //打开数据库
   mongodb.connect(settings.url, function (err, db) {
@@ -90,7 +92,8 @@ User.getAll = function(callback) {
       collection.find({}, {
         "name": 1,
         "email": 1,
-        "id": 1
+        "id": 1,
+		"role": 1
       }).sort({
         time: -1
       }).toArray(function (err, docs) {
@@ -131,7 +134,7 @@ User.edit = function(name, callback) {
 };
 
 //更新用户其相关信息
-User.update = function(name, email, callback) {
+User.update = function(name, email, role, callback) {
   //打开数据库
   mongodb.connect(settings.url, function (err, db) {
     if (err) {
@@ -147,7 +150,10 @@ User.update = function(name, email, callback) {
       collection.update({
         "name": name
       }, {
-        $set: {email: email}
+        $set: {
+		       email: email,
+			   role: role
+			  }
       }, function (err) {
         db.close();
         if (err) {

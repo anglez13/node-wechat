@@ -1,9 +1,28 @@
 <%- include header %>
 <form class="form" role="form" method="post">
-   用户名：</br>
-   <input type="text" class="form-control" name="name" value="<%= user.name %>" disabled="disabled"/><br />
-   E-Mail: </br>
-   <input type="email" class="form-control" name="email" value="<%= user.email %>"/><br />
+   <div class="control-group">
+     <label class="control-label" for="input01">Username</label>
+       <div class="controls">
+         <input type="text" class="form-control" name="name" value="<%= user.name %>" disabled="disabled"/><br />
+	   </div>
+   </div>
+   <div class="control-group">
+     <label class="control-label" for="input01">E-Mail</label>
+       <div class="controls">
+         <input type="email" class="form-control" name="email" value="<%= user.email %>"/><br />
+	   </div>
+   </div>
+   <div class="control-group">
+            <label class="control-label" for="select01">Role</label>
+            <div class="controls">
+              <select id="select01" name="role" value="<%= user.role %>">
+                <option>user</option>
+                <option>admin</option>
+              </select>
+            </div>
+   </div>
+   <div class="controls">
    <input class="btn btn-info" type="submit" value="保存修改" role="button"/>
+   </div>
 </form>
 <%- include footer %>
