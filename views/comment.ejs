@@ -7,11 +7,11 @@
 
 <form method="post">
 <% if (user) { %>
-  姓名：<input type="text" name="name" value="<%= user.name %>" /><br />
+  用户：<input type="text" name="name" value="<%= user.name %>" /><br />
   邮箱：<input type="text" name="email" value="<%= user.email %>" /><br />
   网址：<input type="text" name="website" value="/u/<%= user.name %>" /><br />
 <% } else { %>
-  姓名：<input type="text" name="name" required/><br />
+  用户：<input type="text" name="name" required/><br />
   邮箱：<input type="text" name="email" required/><br />
 <% } %>
   <textarea name="content" rows="5" cols="80" required></textarea><br />
