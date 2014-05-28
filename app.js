@@ -269,7 +269,17 @@ weixin.clickEventMsg(function(msg) {
 					funcFlag : 0
 				}
 				break;
-				
+	   
+	   case '302' :
+	   var resMsg = {
+                   fromUserName : msg.toUserName,
+                   toUserName : msg.fromUserName,
+                   msgType : "text",
+                   content : "欢迎订阅 ε٩(๑> ₃ <)۶з\n我们能为您提供专业的多语言翻译服务，目前支持以下翻译方向：\n" +
+	               "1.中 -> 英(英 -> 中)\n2.中 -> 日\n使用方法为：\n翻译方向编号+#+您所要翻译的内容\n如：\n1#你好"
+	               //funcFlag : 0
+                }
+				break;
 				}
 		
 		weixin.sendMsg(resMsg);
