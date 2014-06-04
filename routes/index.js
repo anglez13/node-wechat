@@ -285,7 +285,7 @@ module.exports = function(app) {
 
   app.post('/u/:name/:day/:title', function (req, res) {
     var date = new Date(),
-        time = date.getFullYear() + "-" + (date.getMonth() + 1) + "-" + date.getDate() + " " + 
+        time = date.getFullYear() + "-" + (date.getMonth() + 1) + "-" + (date.getDate() < 10 ? '0' + date.getDate() : date.getDate()) + " " + 
                date.getHours() + ":" + (date.getMinutes() < 10 ? '0' + date.getMinutes() : date.getMinutes());
     var md5 = crypto.createHash('md5'),
         email_MD5 = md5.update(req.body.email.toLowerCase()).digest('hex'),
